@@ -38,7 +38,6 @@ export const SelectWrapperStyled = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 200px;
 `;
 
 export const SelectStyled = styled.select`
@@ -62,11 +61,6 @@ export const SelectStyled = styled.select`
 
 export const DateFilterContainer = styled.div`
   max-width: 450px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
   background: #fff;
   padding: 10px;
   border-radius: 6px;

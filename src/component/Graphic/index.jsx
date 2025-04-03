@@ -2,7 +2,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import formatDataForChart from "../../utils/FormatDataForChart/formatDataForChart";
 
-const ChartComponent = ({ title, data }) => {
+const ChartComponent = ({ data }) => {
   const chartData = formatDataForChart(data);
   const correnteRecebidaSerie = chartData.map((item) => ({
     name: `${item.circuito} - corrente recebida`,

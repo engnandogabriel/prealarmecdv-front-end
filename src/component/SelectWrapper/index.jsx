@@ -5,17 +5,15 @@ import {
 } from "../../styles/SelectContainer";
 
 const SelectWrapper = ({ text, datas, label, selectedValue, handleChange }) => {
-  const defaultValue = selectedValue || "Selecione um valor"; // Valor padrão como texto
-
   return (
     <SelectWrapperStyled>
       <Span fontSize="20px" text={text} />
       <SelectStyled
-        value={defaultValue}
+        value={label}
         onChange={(e) => handleChange(e.target.value)}
       >
         <option value="Selecione um valor" disabled>
-          {label}
+          {selectedValue}
         </option>
         {datas.map((data, index) => {
           if (data != null)

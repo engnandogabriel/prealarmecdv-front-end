@@ -2,7 +2,6 @@ import LogoGAL2 from "../../assets/gal-2.png";
 import LogoRaio from "../../assets/Raio.png";
 import Logo from "../Logo/index";
 import { HeaderContainer, FlexContainer } from "../../styles/HeaderContainer";
-
 import { LogoWrapper } from "../../styles/Logo";
 import Title from "../Title";
 function Header() {
@@ -10,9 +9,11 @@ function Header() {
     <>
       <HeaderContainer expand="lg">
         <FlexContainer>
-          <LogoWrapper>
-            <Logo src={LogoGAL2} alt="Logo 1" />
-          </LogoWrapper>
+          <a href="/">
+            <LogoWrapper>
+              <Logo src={LogoGAL2} alt="Logo 1" />
+            </LogoWrapper>
+          </a>
           <Title text="MONITORAMENTO DE CDV - SIS" color="#007bff" />
           <LogoWrapper>
             <Logo src={LogoRaio} alt="Logo 1" />

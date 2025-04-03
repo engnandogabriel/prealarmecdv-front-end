@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:8081";
-
+const url = process.env.REACT_APP_API_URL;
 export const GET_LEITURAS = async () => {
   const data = axios.get(`${url}/tu`);
   return data;
@@ -28,7 +27,18 @@ export const GET_ANOMALIAS = async (
   dataInicio
 ) => {
   const data = await axios.get(
-    `${url}/leituras/anomalias?distrito=${distrito}&correnteMin=${correntMin}&correnteMax=${correnteMax}&dataInicio=${dataInicio}`
+    `${url}/leituras/anomalias/corrente?distrito=${distrito}&correnteMin=${correntMin}&correnteMax=${correnteMax}&dataInicio=${dataInicio}`
+  );
+  return data;
+};
+
+export const GET_ANOMALIAS_RESISTENCIA = async (
+  distrito,
+  resistencia,
+  dataInicio
+) => {
+  const data = await axios.get(
+    `${url}/leituras/anomalias/resistencia?distrito=${distrito}&resistencia=${resistencia}&dataInicio=${dataInicio}`
   );
   return data;
 };
