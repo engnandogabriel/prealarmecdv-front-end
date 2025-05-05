@@ -9,7 +9,7 @@ function Header() {
     <>
       <HeaderContainer expand="lg">
         <FlexContainer>
-          <a href="/">
+          <a href="/cma/prealarmecdv/">
             <LogoWrapper>
               <Logo src={LogoGAL2} alt="Logo 1" />
             </LogoWrapper>

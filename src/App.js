@@ -7,11 +7,21 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./component/Header";
 import AnomaliasResistencia from "./pages/AnomaliasResistencia";
 
+function getBaseName() {
+  const urlPath = window.location.pathname;
+  console.log(urlPath);
+  const urlParts = urlPath.split("/");
+  const baseName =
+    urlPath.indexOf("cma/") !== -1 ? `${urlParts[1]}/${urlParts[2]}/` : "/";
+  return baseName;
+}
+
 function App() {
+  const baseName = getBaseName();
   return (
     <CircuitoDeViaContext>
       <Header />
-      <Router>
+      <Router basename={baseName}>
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -30,5 +40,4 @@ function App() {
     </CircuitoDeViaContext>
   );
 }
-
 export default App;
