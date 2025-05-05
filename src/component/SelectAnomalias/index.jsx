@@ -3,26 +3,29 @@ import {
   DateInput,
   DateFilterContainer,
 } from "../../styles/SelectContainer";
-import SelectWrapper from "../SelectWrapper";
+import SelectWrapperAnomalias from "../SelectWrapperAnomalias";
 import ButtonSearch from "../ButtonSearch";
 import Span from "../Span";
-import dateFormat from "../../utils/DateFormat";
-const SelectCurrentAnomalies = ({
+import {
+  dateFormat,
+  dateFormatSemSegundos,
+} from "../../utils/TimeFormat/index";
+import { sedes } from "../../data/data";
+
+const SelectAnomalias = ({
   distrito,
   setDistrito,
   fetchData,
+  dataInicio,
   setDataInicio,
 }) => {
-  const distritos = ["VTM", "SIS", "AAL", "NVA"];
-
   return (
     <SelectionContainer>
       <div></div>
-      <SelectWrapper
+      <SelectWrapperAnomalias
         text="Local"
-        datas={distritos}
-        label="Selecione o Distrito"
-        selectedValue={distrito || "Selecione um valor"}
+        datas={sedes}
+        selectedValue={distrito || ""}
         handleChange={(value) => {
           setDistrito(value);
         }}
@@ -33,6 +36,7 @@ const SelectCurrentAnomalies = ({
           <Span text="Data de Início " />
           <DateInput
             type="date"
+            value={dateFormatSemSegundos(dataInicio)}
             onChange={(e) => setDataInicio(dateFormat(e.target.value))}
           />
         </div>
@@ -45,4 +49,4 @@ const SelectCurrentAnomalies = ({
     </SelectionContainer>
   );
 };
-export default SelectCurrentAnomalies;
+export default SelectAnomalias;

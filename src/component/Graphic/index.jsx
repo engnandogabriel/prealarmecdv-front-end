@@ -4,6 +4,7 @@ import formatDataForChart from "../../utils/FormatDataForChart/formatDataForChar
 
 const ChartComponent = ({ data }) => {
   const chartData = formatDataForChart(data);
+  const title = sessionStorage.getItem("remota");
   const correnteRecebidaSerie = chartData.map((item) => ({
     name: `${item.circuito} - corrente recebida`,
     data: item.correnteRecebida,
@@ -112,20 +113,19 @@ const ChartComponent = ({ data }) => {
         options={{
           ...options,
           title: {
-            text: "Corrente Recebida",
+            text: `${title} - Corrente Recebida`,
             align: "center",
           },
         }}
         series={correnteRecebidaSerie}
         type="line"
         height={350}
-        title="TITLE"
       />
       <ReactApexChart
         options={{
           ...options,
           title: {
-            text: "Resistência",
+            text: `${title} - Resistência`,
             align: "center",
           },
         }}

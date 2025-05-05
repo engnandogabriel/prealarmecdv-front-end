@@ -1,51 +1,21 @@
-const remotas = [
-  {
-    value: "CV km 165",
-  },
-  {
-    value: "CV km 169",
-  },
-  {
-    value: "CV km 174",
-  },
-  {
-    value: "CV km 178",
-  },
-  {
-    value: "CV km 197",
-  },
-  {
-    value: "CV km 214",
-  },
-  {
-    value: "CV km 220",
-  },
-  {
-    value: "CV km 228",
-  },
-  {
-    value: "CV km 232",
-  },
-  {
-    value: "CV km 239",
-  },
-  {
-    value: "CV km 169",
-  },
-  {
-    value: "CV km 240",
-  },
-  {
-    value: "CV km 248",
-  },
-  {
-    value: "CV km 249",
-  },
-  {
-    value: "CV km 248",
-  },
-  {
-    value: "CV km 257",
-  },
+const gals = [
+  { sede: "GAL1", inicio: 0, fim: 81 },
+  { sede: "GAL2", inicio: 81, fim: 446 },
+  { sede: "GAL3", inicio: 446, fim: 784 },
+  { sede: "GAL4", inicio: 784, fim: 889 },
 ];
-export { remotas };
+const sedes = [
+  { sede: "BAC" },
+  { sede: "VTM" },
+  { sede: "SIS" },
+  { sede: "AAL" },
+  { sede: "NVA" },
+  { sede: "ACD1" },
+  { sede: "ACD2" },
+  { sede: "SPAB" },
+  { sede: "MBA" },
+  { sede: "PBA" },
+  { sede: "CJS" },
+];
+
+export { gals, sedes };

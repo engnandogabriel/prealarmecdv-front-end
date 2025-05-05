@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CircuitoDeViaGlobalContext } from "../../Context/Context";
 import dateFormat from "../../utils/DateFormat/index";
 import Loading from "../../component/Loading/index";
-import SelectCurrentAnomalies from "../../component/SelectCurrentAnomalies";
+import SelectAnomalias from "../../component/SelectAnomalias";
 import {
   AnomaliaContainner,
   AnomaliaCard,
@@ -23,12 +23,12 @@ const AnomaliasCorrente = () => {
       data = dateFormat(date);
     }
     if (distrito != null && data != null)
-      await cdvConext.getAnomalias(distrito, 0.2, 1.4, data);
+      await cdvConext.getAnomalias(distrito, 0.4, 1.1, data);
   }
   if (cdvConext.load) return <Loading />;
   return (
     <>
-      <SelectCurrentAnomalies
+      <SelectAnomalias
         distrito={distrito}
         setDistrito={setDistrito}
         fetchData={fetchData}
@@ -46,7 +46,48 @@ const AnomaliasCorrente = () => {
                     <AnomaliaItem key={leitura.leituraId}>
                       <div className="anomalia-item-div">
                         <p>
-                          <strong>Circuito:</strong> {leitura.circuito}{" "}
+                          {leitura.circuito.includes("1_DTKI1") && (
+                            <strong style={{ color: "red" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+                          {leitura.circuito.includes("1D1T") && (
+                            <strong style={{ color: "red" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+
+                          {leitura.circuito.includes("1_ETKI1") && (
+                            <strong style={{ color: "green" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+                          {leitura.circuito.includes("1E1T") && (
+                            <strong style={{ color: "green" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+
+                          {leitura.circuito.includes("2_DTKI1") && (
+                            <strong style={{ color: "blue" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+                          {leitura.circuito.includes("2D1T") && (
+                            <strong style={{ color: "blue" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+                          {leitura.circuito.includes("2_ETKI1") && (
+                            <strong style={{ color: "orange" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
+                          {leitura.circuito.includes("2E1T") && (
+                            <strong style={{ color: "orange" }}>
+                              Circuito: {leitura.circuito}
+                            </strong>
+                          )}
                         </p>
                       </div>
                       <div className="anomalia-item-div">

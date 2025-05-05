@@ -1,10 +1,18 @@
-export default function dateFormat(dateString) {
+export function dateFormat(dateString) {
   if (!dateString) return "";
 
   const date = new Date(dateString);
-  date.setMinutes(date.getMinutes() + date.getTimezoneOffset()); // Ajuste UTC
+  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
 
-  // Retorna a data no formato YYYY-MM-DDT00:00:00
   const formattedDate = date.toISOString().split("T")[0];
   return `${formattedDate}T00:00:00`;
+}
+
+export function dateFormatSemSegundos(dateString) {
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+
+  const formattedDate = date.toISOString().split("T")[0];
+  return formattedDate;
 }
